@@ -21,6 +21,13 @@ dependencies {
 
     // This dependency is used internally, and not exposed to consumers on their own compile classpath.
     implementation("com.google.guava:guava:29.0-jre")
+    implementation("org.apache.commons:commons-lang3:3.11")
+    implementation("commons-io:commons-io:2.8.0")
+    implementation("ch.qos.logback:logback-classic:1.2.3")
+    implementation("net.java.truevfs:truevfs-access:0.13.0")
+    implementation("net.java.truevfs:truevfs-kernel-impl:0.13.0")
+    implementation("net.java.truevfs:truevfs-driver-file:0.13.0")
+    implementation("net.java.truevfs:truevfs-driver-zip:0.13.0")
 
     // Use the Kotlin test library.
     testImplementation("org.jetbrains.kotlin:kotlin-test")

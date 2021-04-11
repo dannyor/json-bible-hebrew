@@ -11,14 +11,16 @@ object BibleLoader {
     fun loadFrom(f: File) : Bible {
         if(f.name.endsWith(".json")) {
             val fileContents = FileUtils.readFileToString(f, "UTF-16")
-            return Json { prettyPrint = true }.decodeFromString<Bible>(fileContents)
+            return Json { prettyPrint = true }.decodeFromString(fileContents)
         }
         else if(f.name.endsWith(".zip")) {
             val zipFile = TFile(f)
             val tFile = zipFile.listFiles()!![0]
-            val fileContents = IOUtils.toString(TFileInputStream(tFile), "UTF-16")
-//            TVFS.umount()
-            return Json { prettyPrint = true }.decodeFromString<Bible>(fileContents)
+            val istream = TFileInputStream(tFile)
+            istream.use {
+                val fileContents = IOUtils.toString(istream, "UTF-16")
+                return Json { prettyPrint = true }.decodeFromString(fileContents)
+            }
         }
         throw IllegalArgumentException("Only json or zipped json are supported")
     }

@@ -1,2 +1,4 @@
 rootProject.name = "json-bible-hebrew"
-include("json-bible-api", "uxlc-xml-json-conversion")
+//include("json-bible-api")
+include("json-bible-api", "dbible-impl")
+//"uxlc-xml-json-conversion"

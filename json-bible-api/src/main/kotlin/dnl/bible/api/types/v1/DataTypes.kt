@@ -1,4 +1,4 @@
-package bible.data.types
+package dnl.bible.api.types.v1
 
 import kotlinx.serialization.Serializable
 

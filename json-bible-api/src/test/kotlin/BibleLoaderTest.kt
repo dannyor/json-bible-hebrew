@@ -1,4 +1,4 @@
-import bible.data.types.BibleLoader
+import dnl.bible.api.BibleLoader
 import org.junit.Test
 import java.io.File
 

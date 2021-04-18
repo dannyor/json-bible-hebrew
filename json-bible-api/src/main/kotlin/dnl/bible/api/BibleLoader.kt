@@ -1,6 +1,6 @@
 package dnl.bible.api
 
-import dnl.bible.api.types.v1.data.types.Bible
+import dnl.bible.api.types.v1.Bible
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import net.java.truevfs.access.*

@@ -21,6 +21,14 @@ enum class BibleGroups(val groupName: String, vararg book: BibleBook) {
     )
 }
 
+enum class HumashEnum(val bibleBook: BibleBook) {
+    GENESIS(BibleBook.GENESIS),
+    EXODUS(BibleBook.EXODUS),
+    LEVITICUS(BibleBook.LEVITICUS),
+    NUMBERS(BibleBook.NUMBERS),
+    DEUTERONOMY(BibleBook.DEUTERONOMY)
+}
+
 enum class BibleBook(val englishName: String, val hebrewName: String, vararg parasha: ParashaEnum) {
     GENESIS("Genesis", "בראשית"),
     EXODUS("Exodus", "שמות"),
@@ -78,7 +86,7 @@ enum class BibleBook(val englishName: String, val hebrewName: String, vararg par
     }
 }
 
-enum class ParashaEnum(val englishName: String, val hebrewName: String, val start: VerseRange) {
+enum class ParashaEnum(val englishName: String, val hebrewName: String, val range: VerseRange) {
     BEREISHIS("Bereishis", "בראשית", newVerseRange("Genesis 1:1–6:8")),
     NOACH("Noach", "נח", newVerseRange("Genesis 6:9–11:32")),
     LECH_LECHA("Lech Lecha", "לך לך", newVerseRange("Genesis 12:1–17:27")),
@@ -100,7 +108,7 @@ enum class ParashaEnum(val englishName: String, val hebrewName: String, val star
     TERUMAH("Terumah", "תרומה", newVerseRange("Exodus 25:1–27:19")),
     TETZAVEH("Tetzaveh", "תצוה", newVerseRange("Exodus 27:20–30:10")),
     KI_SISA("Ki Sisa", "כי תשא", newVerseRange("Exodus 30:11–34:35")),
-    VAYAKHEL("Vayakhel", "ויקהל", newVerseRange("Exodus  35:1–38:20")),
+    VAYAKHEL("Vayakhel", "ויקהל", newVerseRange("Exodus 35:1–38:20")),
     PEKUDEI("Pekudei", "פקודי", newVerseRange("Exodus 38:21–40:38")),
     VAYIKRA("Vayikra", "ויקרא", newVerseRange("Leviticus 1:1–5:26")),
     TZAV("Tzav", "צו", newVerseRange("Leviticus 6:1–8:36")),
@@ -130,8 +138,8 @@ enum class ParashaEnum(val englishName: String, val hebrewName: String, val star
     KI_SEITZEI("Ki Seitzei", "כי תצא", newVerseRange("Deuteronomy 21:10–25:19")),
     KI_SAVO("Ki Savo", "כי תבוא", newVerseRange("Deuteronomy 26:1–29:8")),
     NETZAVIM("Netzavim", "נצבים", newVerseRange("Deuteronomy 29:9–30:20")),
-    VAYEILECH("Vayeilech", "וילך", newVerseRange("Deuteronomy 31:1–30")),
-    HAAZINU("Haazinu", "האזינו", newVerseRange("Deuteronomy 32:1–52")),
+    VAYEILECH("Vayeilech", "וילך", newVerseRange("Deuteronomy 31:1–31:30")),
+    HAAZINU("Haazinu", "האזינו", newVerseRange("Deuteronomy 32:1–32:52")),
     VZOS_HABRACHA("Vzos Habracha", "וזאת הברכה", newVerseRange("Deuteronomy 33:1–34:12"));
 
     companion object {

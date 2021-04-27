@@ -3,7 +3,7 @@ package dnl.bible.api.types
 import java.util.regex.Pattern
 
 interface Tora {
-    fun getHumash(book: BibleBook): Book
+    fun getHumash(humash: HumashEnum): Book
     fun getParasha(parasha: ParashaEnum): Parasha
 }
 
@@ -78,7 +78,7 @@ data class VerseRange(val start: VerseLocation, val end: VerseLocation) {
 }
 
 object VerseRangeFactory {
-    private val rangePattern = Pattern.compile("(\\w+) (\\d):(\\d).+?(\\d):(\\d)")
+    private val rangePattern = Pattern.compile("(\\w+) (\\d+):(\\d+).+?(\\d+):(\\d+)")
     fun newVerseRange(str: String): VerseRange {
         val matcher = rangePattern.matcher(str)
         matcher.find()

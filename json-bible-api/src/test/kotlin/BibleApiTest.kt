@@ -7,7 +7,7 @@ import org.junit.BeforeClass
 import org.junit.Test
 import java.io.File
 
-class BibleLoaderTest {
+class BibleApiTest {
     companion object {
         lateinit var bible: Bible
         @BeforeClass @JvmStatic fun setup() {
